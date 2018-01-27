@@ -1,4 +1,4 @@
-/*jshint
+*jshint
     forin: false
 */
 /*global hb*/
@@ -34,7 +34,7 @@
 //          - alt: alternate text for the image (<img alt=>), defaults to "Logo" or "Logo 1", "Logo 2", ...
 //            if src is not specified, this is the text of the "logo"
 //          - height: optional height of the logo (<img height=>)
-//          - width: optional width of the logo (<img width=>)
+//          - width: optional width of the logo (<img width=>)TBC
 //          - url: the URI to the organization represented by the logo (target of <a href=>)
 //          - id: optional id for the logo, permits custom CSS (wraps logo in <span id=>)
 //          - each logo element must specifiy either src or alt
@@ -341,15 +341,15 @@ define(
                     if (conf.specStatus === "ED") pubsubhub.pub("warn", "Editor's Drafts should set edDraftURI.");
                 }
                 conf.maturity = (this.status2maturity[conf.specStatus]) ? this.status2maturity[conf.specStatus] : conf.specStatus;
-                var publishSpace = "spec";
+                var publishSpace = "";
                 if (conf.specStatus === "Member-SUBM") publishSpace = "Submission";
                 else if (conf.specStatus === "Team-SUBM") publishSpace = "TeamSubmission";
-                if (conf.isRegular) conf.thisVersion =  "https://rightschain.info/" + publishSpace + "/" +
+                if (conf.isRegular) conf.thisVersion =  "https://rightschain.info" + publishSpace + "/" +
                                                           conf.publishDate.getFullYear() + "/" +
                                                           conf.maturity + "-" + conf.shortName + "-" +
                                                           utils.concatDate(conf.publishDate) + "/";
                 if (conf.specStatus === "ED") conf.thisVersion = conf.edDraftURI;
-                if (conf.isRegular) conf.latestVersion = "https://rightschain.info/" + publishSpace + "/" + conf.shortName + "/";
+                if (conf.isRegular) conf.latestVersion = "https://rightschain.info" + publishSpace + "/" + conf.shortName + "/";
                 if (conf.isTagFinding) {
                     conf.latestVersion = "https://www.w3.org/2001/tag/doc/" + conf.shortName;
                     conf.thisVersion = conf.latestVersion + "-" + utils.concatDate(conf.publishDate, "-");
