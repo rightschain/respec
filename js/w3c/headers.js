@@ -344,12 +344,12 @@ define(
                 var publishSpace = "spec";
                 if (conf.specStatus === "Member-SUBM") publishSpace = "Submission";
                 else if (conf.specStatus === "Team-SUBM") publishSpace = "TeamSubmission";
-                if (conf.isRegular) conf.thisVersion =  "https://TBC/" + publishSpace + "/" +
+                if (conf.isRegular) conf.thisVersion =  "https://rightschain.info/" + publishSpace + "/" +
                                                           conf.publishDate.getFullYear() + "/" +
                                                           conf.maturity + "-" + conf.shortName + "-" +
                                                           utils.concatDate(conf.publishDate) + "/";
                 if (conf.specStatus === "ED") conf.thisVersion = conf.edDraftURI;
-                if (conf.isRegular) conf.latestVersion = "https://TBC/" + publishSpace + "/" + conf.shortName + "/";
+                if (conf.isRegular) conf.latestVersion = "https://rightschain.info/" + publishSpace + "/" + conf.shortName + "/";
                 if (conf.isTagFinding) {
                     conf.latestVersion = "https://www.w3.org/2001/tag/doc/" + conf.shortName;
                     conf.thisVersion = conf.latestVersion + "-" + utils.concatDate(conf.publishDate, "-");
