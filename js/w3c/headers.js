@@ -1,4 +1,4 @@
-*jshint
+/*jshint
     forin: false
 */
 /*global hb*/
@@ -349,7 +349,7 @@ define(
                                                           conf.maturity + "-" + conf.shortName + "-" +
                                                           utils.concatDate(conf.publishDate) + "/";
                 if (conf.specStatus === "ED") conf.thisVersion = conf.edDraftURI;
-                //if (conf.isRegular) conf.latestVersion = "https://rightschain.info" + publishSpace + "/" + conf.shortName + "/";
+                if (conf.isRegular) conf.latestVersion = "https://rightschain.info" + publishSpace + "/" + conf.shortName + "/";
                 if (conf.isTagFinding) {
                     conf.latestVersion = "https://www.w3.org/2001/tag/doc/" + conf.shortName;
                     conf.thisVersion = conf.latestVersion + "-" + utils.concatDate(conf.publishDate, "-");
